@@ -9,28 +9,52 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: rgb(248, 249, 250);
-    }
-  </style>
+  <link href="css/login.css" rel="stylesheet">
 </head>
 
 <body>
-  <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
+  <main class="formsesion">
+    <img id="logoimg" src="img/login.png">
+  <!--Formulario del login-->
+  <div id="cuadradito">
+  <form class="formulario" enctype="" method="" >
+   
+    <h1>Iniciar sesión</h1>
+   
+    <input type="email" class="form-control" id="floatingInput3" placeholder="Email">
+    <div id="obligatorio"><p>*Este campo es obligatorio</p></div>
+    <br>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <div id="obligatorio1"><p >*Este campo es obligatorio</p> </div>
+    <br>
+    <div id="robot"><input type="checkbox" class="form-check-input" id="exampleCheck1" >  No soy un robot.</div>
+    <div id="obligatorio2"><p>*Este campo es obligatorio</p></div>
+    <label class="form-check-label" for="exampleCheck1"></label>
+    <br>  
+   
+    <button id="boton" type="submit">Log in</button>
+
+<hr>
+    <p> — or sing in with — </p>
+<div id="botonesRedes">
+    <button class="redes"><img src="img2/gg.png" width="24px" height="24px"> Google</button>
+    <button class="redes"><img src="img2/ig.png" width="26.5px" height="26.5px"> Instagram</button>
+    <button class="redes"><img src="img2/fb.png" width="24px" height="24px"> Facebook</button>
+  </div>
+  </form>
+</div>
+  <div id="alerta"> <p id="alerta1">
+    Hay campos obligatorios sin completar.
+    <br>
+     Chequeá todos los campos e intentalo de nuevo.</p></div>
+     
+</div>
+</main>
+<footer class="text-muted">
+  <div class="container">
+    <p> Este sitio forma parte de <a class="link" href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a></p>
+      <p><a id="derecha" class="link" href="#">Volver arriba</a></p>
+  </div>
   </footer>
   <script src="js/login.js"></script>
 </body>

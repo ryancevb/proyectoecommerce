@@ -1,0 +1,166 @@
+body {
+    font-family: 'verdana';
+    color: black;
+}
+
+
+#cuadradito{
+    background-color: #ffae6a;
+    height: 480px;
+    display: flex;
+    width: 27%;
+    justify-content: center;
+    border-radius: 50px;
+    align-items: center;
+    margin: 0 auto !important;
+}
+.redes img{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+.redes{
+border-radius: 10px;
+padding: 2px;
+margin: 3px;
+width: 33%;
+font-weight: strong;
+}
+#botonesRedes{
+   display: flex;
+   font-size: 12px;
+}
+
+
+#robot{
+    width: 100%;
+}
+#boton{
+    border-radius: 10px;
+    background-color: #ffffff;
+    width: 10vw;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+#boton:hover{
+    background-color: #dadada;
+    color: black;
+    border-color: black;
+    size-adjust: 1.15;
+    transition-duration: 0.4s;
+}
+#logoimg {
+    border-radius: 100px;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    padding: 5px;
+}
+/*Formulario*/
+.formsesion h1 {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.formulario {
+    margin: 0 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.formulario input {
+    border: 2px solid;
+    box-shadow: 1px 3px 5px;
+}
+
+
+.formulario button {
+    box-shadow: 1px 3px 5px;
+}
+
+
+.form-control {
+    width: 22vw;
+    display: flex;
+    height: 45px;
+    border-radius: 10px;
+}
+
+
+.form-floating {
+    margin-right: 50px;
+}
+
+
+#obligatorio, #obligatorio1, #obligatorio2{
+    display: none;
+    font-size: small;
+}
+#alerta1{
+    display: none;
+    background-color: rgb(255, 215, 215) ;
+    color: black;
+    padding: 20px;
+    width: 450px;
+    border-radius: 15px;
+    border-color: black;
+    border: 2px;
+    font-size:large;
+}
+
+
+#alerta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/*Footer*/
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+p #derecha{
+    text-align: right;
+}
+.link{
+    color: black;
+    background-color: white;
+    padding: 2px;
+    border-color: white;
+    transition-duration: 0.4s;
+    box-shadow: none;
+}
+a:hover{
+color: black;
+    transition-duration: 0.4s;
+    text-decoration: none;
+   
+}
+a{
+    color: black;
+    text-decoration: underline;
+}
+
+
+
+
+h1{
+    font-size: xx-large;
+    padding: 15px;
+}
+#jap{
+    text-align: left;
+
+
+}
+#arriba{
+    text-align: right;
+}

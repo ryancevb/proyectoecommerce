@@ -188,3 +188,45 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+
+.m-3, .card-text {
+  text-align: center;
+}
+#botonMas{
+background-color: rgb(238, 238, 238);
+}
+#autos, #juguetes, #muebles{
+  background-color: rgb(238, 238, 238);
+}
+.links{
+  color: black;
+}
+.links:hover{
+  text-decoration: none;
+  color: black;
+}
+#cat-list-container{
+    
+margin-top: 10px;
+padding: 0 !important;
+margin: 0 auto;
+}
+.categoriaCartas{
+  border-radius: 5px;
+ display: inline-block;
+  width: calc(33% - 28px);
+  margin: 13px;
+  padding: 0 !important;
+  height: 45vh;
+  box-shadow: 1px 1px 5px;
+  border: 1px solid rgb(182, 181, 181) !important;
+}
+.categoriaCartas img{
+  padding: 0 !important;
+ }
+ .categoriaTextoCarta{
+
+ padding: 20px;
+
+ }
