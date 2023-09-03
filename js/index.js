@@ -18,7 +18,6 @@ function logearse(e) {
     window.location.href = "login.html";
   }
 }
-
 logearse();
 
 document.addEventListener("keydown", function (event) {
@@ -28,3 +27,6 @@ document.addEventListener("keydown", function (event) {
     alert("LocalStorage ha sido borrado.");
   }
 });
+
+
+

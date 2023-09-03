@@ -4,30 +4,31 @@ body {
 }
 
 
-#cuadradito{
+#box{
     background-color: #ffae6a;
-    height: 480px;
+    height: 520px;
     display: flex;
     width: 27%;
     justify-content: center;
     border-radius: 50px;
     align-items: center;
     margin: 0 auto !important;
+    box-shadow: 1px 1px 6px;
 }
-.redes img{
+.socialNet img{
     border: none;
     background-color: transparent;
     padding: 0;
     cursor: pointer;
 }
-.redes{
+.socialNet{
 border-radius: 10px;
 padding: 2px;
 margin: 3px;
 width: 33%;
 font-weight: strong;
 }
-#botonesRedes{
+#buttonNet{
    display: flex;
    font-size: 12px;
 }
@@ -36,7 +37,7 @@ font-weight: strong;
 #robot{
     width: 100%;
 }
-#boton{
+#button{
     border-radius: 10px;
     background-color: #ffffff;
     width: 10vw;
@@ -44,7 +45,7 @@ font-weight: strong;
     align-items: center;
     justify-content: center;
 }
-#boton:hover{
+#button:hover{
     background-color: #dadada;
     color: black;
     border-color: black;
@@ -67,7 +68,7 @@ font-weight: strong;
 }
 
 
-.formulario {
+.form {
     margin: 0 40vw;
     display: flex;
     flex-direction: column;
@@ -75,13 +76,13 @@ font-weight: strong;
 }
 
 
-.formulario input {
+.form input {
     border: 2px solid;
     box-shadow: 1px 3px 5px;
 }
 
 
-.formulario button {
+.form button {
     box-shadow: 1px 3px 5px;
 }
 
@@ -99,11 +100,11 @@ font-weight: strong;
 }
 
 
-#obligatorio, #obligatorio1, #obligatorio2{
+#required, #required1, #required2{
     display: none;
     font-size: small;
 }
-#alerta1{
+#alert_text{
     display: none;
     background-color: rgb(255, 215, 215) ;
     color: black;
@@ -116,7 +117,7 @@ font-weight: strong;
 }
 
 
-#alerta{
+#alert{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +128,7 @@ font-weight: strong;
     display: flex;
     justify-content: space-between;
 }
-p #derecha{
+p #right{
     text-align: right;
 }
 .link{

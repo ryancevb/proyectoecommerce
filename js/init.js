@@ -39,3 +39,27 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+//Para sacar los datos del local storage 
+function logearse(e) {
+  if (!localStorage.getItem("correo") || !localStorage.getItem("pass")) {
+    window.location.href = "login.html";
+  }
+}
+
+logearse();
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Delete") {
+    localStorage.clear();
+
+    alert("LocalStorage ha sido borrado.");
+  }
+});
+
+//Obtenemos el email en la página 
+const email= document.getElementById("email");
+let userEmail= localStorage.getItem("correo");
+console.log(localStorage.getItem("correo"));
+email.innerHTML= userEmail;
+email.href="myprofile.html";
