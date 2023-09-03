@@ -39,7 +39,7 @@ document.getElementById("alerta1").style.display = "none";
     e.preventDefault();
     localStorage.setItem("correo", correo);
     localStorage.setItem("pass", contraseña);
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   } 
   }
 
