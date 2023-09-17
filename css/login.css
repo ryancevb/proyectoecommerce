@@ -2,10 +2,9 @@ body {
     font-family: 'verdana';
     color: black;
 }
-
-
 #box{
-    background-color: #ffae6a;
+    background-color: orangered;
+    background: linear-gradient(45deg, red, orangered, rgb(235, 109, 6),   rgba(215, 78, 54, 0.9));
     height: 520px;
     display: flex;
     width: 27%;
@@ -13,7 +12,7 @@ body {
     border-radius: 50px;
     align-items: center;
     margin: 0 auto !important;
-    box-shadow: 1px 1px 6px;
+    box-shadow: 1px 1px 7px black;
 }
 .socialNet img{
     border: none;

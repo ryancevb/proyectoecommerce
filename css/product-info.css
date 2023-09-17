@@ -1,0 +1,133 @@
+body {
+    background-color: orangered;
+    background: linear-gradient(45deg, red, orangered, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+/*la informacion de los productos*/
+#infoProd {
+    margin: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 4px black;
+    border-radius: 20px;
+}
+
+#imgInfo {
+    display: flex;
+}
+
+.img {
+    flex: 40.33%;
+    padding: 5px;
+}
+
+.title {
+    font-family: 'Verdana', serif;
+    font-weight: bolder;
+    padding: 5px;
+    margin-bottom: 0px;
+
+}
+
+.description {
+    padding: 5px;
+    font-family: 'Verdana', serif;
+    margin-bottom: 0px;
+}
+
+/*Comentarios*/
+
+#containercommProd {
+    float: left;
+    margin: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 4px black;
+    width: 50%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.comms {
+    font-family: 'Verdana', serif;
+    padding: 0px 0px 0px 5px;
+
+}
+
+.name {
+    font-weight: bolder;
+    float: left;
+    margin: auto;
+    margin: auto;
+    width: 50%;
+
+
+}
+
+.date {
+    float: left;
+    margin: auto;
+    margin: auto;
+    width: 40%;
+}
+
+/*Agregar Comentarios*/
+#formsInfo {
+    float: left;
+    margin: 10px;
+    margin: 10px;
+    width: 45%;
+    height: 260px;
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 8px 4px black;
+    font-family: 'Verdana', serif;
+    background-color: white;
+    border-radius: 15px;
+}
+
+h3 {
+    font-weight: bolder;
+}
+
+.btnInfo {
+    margin-top: 15px;
+    text-align: center;
+
+
+}
+
+button {
+    box-shadow: 2px 2px 8px 4px black;
+}
+
+.container {
+    float: left;
+    margin: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+#options {
+    font-size: 15px;
+}
+
+.form-control {
+    width: 20vw;
+}
+
+.btn {
+    background-color: orangered;
+    border-color: orangered;
+}
+#floatingTextarea{
+    width: 100%;
+}
+
+/*footer*/
+.float-end{
+    color:black;
+  }

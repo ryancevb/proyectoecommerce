@@ -1,0 +1,78 @@
+body {
+  background-color: orangered;
+  background: linear-gradient(45deg, red, orangered, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.float-end {
+  color: black;
+}
+
+/*Titulo de la paginas */
+.text-center{
+  background: linear-gradient(45deg, orangered, red, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+  width: 40%;
+  height: 40%;
+  margin: 2vw 30vw;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px 2px rgb(252, 250, 250);
+  color: white;
+}
+
+.form-control,
+.btn-group {
+  box-shadow: 2px 2px 8px 2px black;
+}
+/*Botones para filtrar en products y categories */
+#rangeFilterCount, #clearRangeFilter, #rangeFilterCountMin, #rangeFilterCountMax{
+  background: linear-gradient(45deg, orangered, red, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+  box-shadow: 2px 2px 12px 2px black;
+  color: white;
+  font-weight: bolder;
+}
+
+#rangeFilterCountMin::placeholder, #rangeFilterCountMax::placeholder, .cant{
+  color: white;
+  font-weight: bolder;
+}
+
+#sortAsctext, #sortDesctext, #sortByCounttext{
+  background: linear-gradient(45deg, red, rgb(255, 153, 0), rgb(235, 109, 6), rgba(228, 110, 0, 0.9));
+  box-shadow: 2px 2px 12px 2px black;
+  color: white;
+  font-weight: bolder;
+}
+
+/*list-group-item list-group-item-action cursor-active */
+.categoriaCartas {
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 2px black;
+}
+/*Titulo de products*/
+.products {
+  background: linear-gradient(45deg, orangered, red, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+  width: 50%;
+  height: 100px;
+  margin: 0vw 20vw;
+  border-radius: 15px;
+  box-shadow: 2px 2px 8px 2px rgb(252, 250, 250);
+  color: white;
+}
+/*Buscador de products*/
+#input-search {
+  font-size: 20px;
+  background: linear-gradient(45deg, orangered, red, rgb(235, 109, 6), rgba(215, 78, 54, 0.9));
+  box-shadow: 2px 2px 8px 2px rgb(252, 250, 250);
+  color: white;
+}
+#input-search::placeholder{
+  color: white;
+  font-weight: bolder;
+}
+.btn {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
