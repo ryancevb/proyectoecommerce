@@ -45,9 +45,18 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+          <li class="nav-item dropdown">
+            <button href="#" class="buttonemail" id="email" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"></button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+            <li><a class="dropdown-item" href="cart.html">Carrito</a></li> 
+            <li><a id="darkmode"class="dropdown-item">Modo Oscuro</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a id="logout" class="dropdown-item" href="login.html">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
       </div>
     </div>
   </nav>
@@ -63,7 +72,7 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p class="links">Este sitio forma parte de <a class="links" href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>

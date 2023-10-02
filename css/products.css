@@ -28,9 +28,9 @@
     display: inline-flex;
     padding: 20px 50px;
     box-shadow: 2px 2px 8px 4px black;
-    background-color: white;
     border-radius: 15px;
-    
+    background-color:  rgb(31, 31, 31);
+    color: rgb(202, 198, 198)
 
 
 }

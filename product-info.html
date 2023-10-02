@@ -11,6 +11,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/product-info.css" rel="stylesheet">
+  <link href="css/night-mode.css" rel="stylesheet" id="night-mode-stylesheet" disabled>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link active" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
@@ -31,50 +32,83 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html" id="email">Iniciar Sesión</a>
-          </li>
+          <li class="nav-item dropdown">
+            <button href="#" class="buttonemail" id="email" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"></button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="my-profile.html">Mi Perfil</a></li>
+            <li><a class="dropdown-item" href="cart.html">Carrito</a></li> 
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="night-mode-switch">
+              <label class="form-check-label" for="night-mode-switch">Modo Noche</label>
+            </div>
+            <li><hr class="dropdown-divider"></li>
+            <li><a id="logout" class="dropdown-item" href="login.html">Cerrar Sesión</a></li>
+          </ul>
+          </ul>
+        </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
+    <!--Muestran la información del producto--> 
+    <div id="textCom2"> <h1>Información del producto:</h1></div>
     <div id="infoProd">
-      
+     
     </div>
-    <div id="containercommProd">
-    </div>
-
-    
-<!--COMENTARIOS-->
-<div id="comments">
-  <form id="formsInfo">
-      <h3> Comentar</h3>
-      <label for="text">Tu opinión:</label>
-      <br>
-      <textarea class="form-control" placeholder="Escribe aquí tu comentario..." id="floatingTextarea"></textarea>
-      <br>
-      <label for="text">Tu puntuación:</label>
-      <select name="opciones" id="options">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <div class="btnInfo">
-        <button type="submit" class="btn btn-primary ">Enviar</button>
+    <!--Muestra de imagenes -->
+    <div id="contImg" class="carousel slide" data-bs-ride="carousel">
+     
+      <div class="carousel-inner" id="container2">
+        <div class="carousel-item active" id="imgActive">
+        </div>
       </div>
-    
-      </form>
-</div>
+    </div>
+      <!--Comentarios-->
+      <div id="textCom">
+      <h2 >Comentarios</h2></div>
+      <div id="containercommProd">
+      </div>
+      
+        <!--COMENTARIOS-->
+        <div id="comments">
+          <form id="formsInfo">
+            <h3> Comentar</h3>
+            <label for="text">Tu opinión:</label>
+            <br>
+            <textarea class="form-control" placeholder="Escribe aquí tu comentario..." id="floatingTextarea"></textarea>
+            <br>
+            <label for="text">Tu puntuación:</label>
+            <select name="opciones" id="opciones">
+              <option value="opcion1">1</option>
+              <option value="opcion2">2</option>
+              <option value="opcion3">3</option>
+              <option value="opcion4">4</option>
+              <option value="opcion4">5</option>
+            </select>
+            <div class="btnInfo">
+              <button type="submit" class="btn btn-primary ">Enviar</button>
+            </div>
+
+          </form>
+        </div>
+        <!--Productos Relacionados-->
+      <div id="containerRelatedProd">
+
+      </div>
+
+        </div>
+      </div>
+
   </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#" class="float-end">Volver arriba</a>
       </p>
-      <p class="links">Este sitio forma parte de <a class="links" href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p class="links">Este sitio forma parte de <a class="links" href="https://jovenesaprogramar.edu.uy/"
+          target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
   <div id="spinner-wrapper">

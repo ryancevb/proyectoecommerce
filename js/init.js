@@ -49,13 +49,13 @@ function logearse(e) {
 
 logearse();
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Delete") {
-    localStorage.clear();
 
-    alert("LocalStorage ha sido borrado.");
-  }
-});
+document.getElementById("logout").addEventListener("click", function (event) {
+ /* if (event.key === "Delete") {*/
+    localStorage.removeItem("correo");
+
+    alert("Se ha cerrado la sesión.");
+  });
 
 //Obtenemos el email en la página 
 const email= document.getElementById("email");
