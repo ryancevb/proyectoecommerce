@@ -13,6 +13,7 @@ function callJSONImg() {
         .then(data => {
             img = data.images;
             callImg(img) //Muestro las imagenes
+            getID()
         })
         .catch(error => console.log(error))
 }
@@ -52,7 +53,6 @@ async function callJSON() {
         const response = await fetch("https://japceibal.github.io/emercado-api/products/" + receivedProd + ".json")
         const data = await response.json()
         item = data;
-        
         return showInfo(item)
     } catch (error) {
         console.log(error)
@@ -61,12 +61,12 @@ async function callJSON() {
 }
 
 callJSON()
+
 //Informaciòn de los productos 
 
 function showInfo(item) {
     container.innerHTML = "";
-        container.innerHTML += `
-        
+        container.innerHTML += `       
         <div class ="card">
          <p class="title">Nombre</p>
          <p class="description"> ${item.name} </p>
@@ -94,7 +94,6 @@ function showInfo(item) {
     } 
 
 
-    
 //Llamamos a los comentarios
 async function callJSONcomm() {
     try {
@@ -120,7 +119,6 @@ function showInfocomm(com) {
         containercomm.innerHTML += `
         
         <div class ="comms">
-       
         <p class ="name">${com[i].user}</p><!– Nombre –>
         <p class = "date">${com[i].dateTime}</p><!– Date –>
        
@@ -165,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
 //Traer los productos relacionados
 async function callJSONrel() {
     try {
@@ -180,7 +177,7 @@ async function callJSONrel() {
     } catch (error) {
         console.log(error)
     }
-    selectedProduct(rel)
+    // selectedProduct(rel)
 }
 callJSONrel()
 function showInforel(rel) {
@@ -215,7 +212,7 @@ function selectedRelProduct(rel){
     } )
 }
 
-showInforel(rel);
+// showInforel(rel);
 
 
 
@@ -256,5 +253,13 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleNightMode();
   });
 
+// Obtener el ID para comprar y agregar en el carrito 
 
+function getID(){
+     document.getElementById("btnCart").addEventListener("click", function () {
 
+      localStorage.setItem("catBuyID", receivedProd);
+      window.location = "cart.html";
+    });
+}
+   

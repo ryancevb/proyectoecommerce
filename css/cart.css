@@ -1,0 +1,29 @@
+#container-cart{
+    text-align: center;
+    margin-top: 40px;
+}
+#container{
+    display: flex;
+    
+}
+#table-cart{
+    background: linear-gradient(rgb(100, 94, 91), rgb(255, 253, 250));
+    border-radius: 14px;
+    margin: 0 auto;
+}
+
+
+.cartImg{
+    width: 80px;
+}
+
+
+input{
+    width: 40px;
+}
+th, td{
+    padding: 6px 10px;
+}
+.form-group{
+    margin: 0 auto;
+}
