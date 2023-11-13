@@ -12,6 +12,7 @@ const cartTotal = document.getElementById("tdTotal");
 const popup = document.getElementById("popupMetodo");
 const buttonTrash = document.querySelector(".trash");
 const modal = document.getElementById("modal-content");
+const typeEnvio = document.getElementById("tipoEnvio");
 var userID = undefined; // para próx entregas agregar en el fetch
 var userCart = [];
 
@@ -31,11 +32,15 @@ function getCartInfo() {
                 dataImg.src = `${elem.image}`;
                 let count = document.createElement("input");
                 count.setAttribute("type", "number");
+                count.setAttribute("id", "amountNumber");
+                count.setAttribute("value", 1);
                 count.oninput = function () {
-                    if (this.value <= 0) {
+                    if (this.value <= 1) {
                         this.value = 1;
                     }
                 }
+              
+                cartSubt.appendChild(document.createTextNode(elem.unitCost));
                 count.addEventListener("input", () => {
                     subtotal(elem.unitCost, parseInt(count.value), elem.currency);
                 });
@@ -66,13 +71,13 @@ function getCartInfo() {
 
 
 
-document.getElementById("tipoEnvio").addEventListener("change", () => { mostrarTotales() })
+typeEnvio.addEventListener("change", () => { mostrarTotales() })
 function mostrarTotales() {
     let stotal;
     // let subt = document.getElementById("cartSubt").innerHTML;
     let subt = 0;
     let nsubt = 0;
-    tipoEnvio = document.getElementById("tipoEnvio").value;
+    tipoEnvio = typeEnvio.value;
     let cost = [];
 
 
@@ -90,7 +95,7 @@ function mostrarTotales() {
                 stotal = Number(subt) + Number(nsubt);
                 console.log(typeof(nsubt));
 
-               
+
             });
 
         } else {
@@ -105,7 +110,7 @@ function mostrarTotales() {
                 nsubt = cost.reduce((a, b) => a + b, 0);}
                 console.log(typeof(subt), subt, cost);
             });
-            stotal = parseInt(subt) + parseInt(nsubt); 
+            stotal = parseInt(subt) + parseInt(nsubt);
         }
         let costEnvio = 0;
         let costTotal = 0;
@@ -122,11 +127,11 @@ function mostrarTotales() {
 
         costTotal = parseInt(stotal) + parseInt(costEnvio);
 
-        if(nsubt === ""){
+        if (nsubt === "") {
             cartBuySTotal.innerHTML = "USD " + subt;
-        } 
-        
-        cartBuySTotal.innerHTML = "USD " + Number(stotal);
+        }
+        cartBuySTotal.innerHTML = "USD " + stotal;
+
         cartEnvioTotal.innerHTML = "USD " + costEnvio.toFixed(2);
         cartTotal.innerHTML = "USD " + costTotal.toFixed(1);
         console.log(typeof(stotal));
@@ -187,8 +192,6 @@ async function callJSON() {
             row.setAttribute("class", "trTD");
             showCart.appendChild(row);
 
-
-
             /// Crea un elemento <td> 
             var column1 = document.createElement("TD");
             var column2 = document.createElement("TD");
@@ -232,12 +235,23 @@ async function callJSON() {
             //Contador
             let count = document.createElement("input");
             count.setAttribute("type", "number");
-
+            count.setAttribute("class", "amountNumber");
+            count.setAttribute("value", 1);
             count.oninput = function () {
-                if (this.value < 0) {
+                if (this.value <=1 ) {
                     this.value = 1;
                 }
             }
+            if (data.currency !== "USD"){
+                 column5.appendChild(document.createTextNode(data.cost / 40));
+
+            }else{
+               
+                  column5.appendChild(document.createTextNode(data.cost));
+            }
+
+
+       
             count.addEventListener("input", () => {
                 subtotal(data.cost, parseInt(count.value), data.currency);
             });
@@ -259,6 +273,7 @@ async function callJSON() {
                 // updatesubtotal(data.cost, parseInt(count.value), data.currency);
                 mostrarTotales()
             });
+
 
             //Se crea los elementos de adentro de los <td>
             column2.appendChild(prodName);
@@ -283,6 +298,7 @@ async function callJSON() {
 
 }
 
+// Actualización del subtotal
 
 function updatesubtotal(cost, amount, currency) {
     if (currency !== "USD") {
@@ -311,12 +327,6 @@ function updatesubtotal(cost, amount, currency) {
 
 
 
-
-
-
-
-
-
 // Validación del formulario y el modal
 (function () {
     'use strict'
@@ -325,20 +335,49 @@ function updatesubtotal(cost, amount, currency) {
     var forms = document.querySelectorAll('.needs-validation')
     Array.from(forms)
         .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
+            form.addEventListener('submit',  function (event) {
+                if (!form.checkValidity()  ) {
                     event.preventDefault()
                     event.stopPropagation()
+                    showAlertError()
                 }
 
-                form.classList.add('was-validated')
-                if(form.checkValidity()){
-                    alert("Compra hecha satisfactoriamente!!");
+
+                form.classList.add('was-validated');
+              
+                if(form.checkValidity(event)){
+                    event.preventDefault();
+                    showAlertSuccess();
                 }
+               
+               
             }, false)
         })
 })();
 
+//Alertas
+function showAlertSuccess() {
+    document.getElementById("alert-success").classList.add("show");
+}
+
+function showAlertError() {
+    document.getElementById("alert-danger").classList.add("show");
+}
+
+// Tipo de envio es seleccionado aparece todo el formulario
+function showForm(){
+    let tipoEnvio = typeEnvio.value;
+    if( tipoEnvio !== ""){
+        
+        let elem = document.querySelectorAll(".hideAndShow");
+        for(let i = 0; i<elem.length; i++){
+            elem[i].style.display = `block`;
+        }
+    }
+}
+typeEnvio.addEventListener("change", () => { showForm()() })
+//showForm();
+//Validación de la tarjeta de crédito, adentro del modal, sí uno esta seleccionado el otro no se puede seleccionar
 document.getElementById("chTarjetaCredito").addEventListener("change", () => {
     if (document.getElementById("chTarjetaCredito").checked) {
         document.getElementById("chBancaria").checked = false;
@@ -375,18 +414,25 @@ document.getElementById("chBancaria").addEventListener("change", () => {
 });
 
 
-// validando el tipo envio y el boton del modal
+// validando el formulario
 document.getElementById("buy-btn").addEventListener("click", function () {
-    var tipoEnvio = document.getElementById("tipoEnvio");
-    if (tipoEnvio.value === "disabled") {
-        tipoEnvio.setCustomValidity("Seleccione un tipo de envío válido.");
-    } else {
-        tipoEnvio.setCustomValidity("");
-    }
 
+    if ( !cuentaBancaria.checked && !chTarjetaCredito.checked) {
+        cuentaBancaria.setCustomValidity("Seleccione un método de pago");
+        chTarjetaCredito.setCustomValidity("Seleccione un método de pago");
+    } else {
+
+        cuentaBancaria.setCustomValidity("");
+        chTarjetaCredito.setCustomValidity("");
+       
+    }
+    //Se valida sí estan los checkbox validados
     validateCheckbox()
 
 });
+
+
+
 
 let btnMPago = document.getElementById("btnMPago");
 let cuentaBancaria = document.getElementById("chBancaria");
@@ -395,10 +441,10 @@ let txtNumTarjeta = document.getElementById("txtNumTarjeta");
 let txtCodSeguridadTarjeta = document.getElementById("txtCodSeguridadTarjeta");
 let txtVencimientoTarjeta = document.getElementById("txtVencimientoTarjeta");
 let txtNumBancaria = document.getElementById("txtNumBancaria");
+let btnModal = document.getElementById("btnModal");
+// Validación de sí los checkbocks estan validados y así mostrar el botón verde como validado
 
 function validateCheckbox() {
-
-
     if (cuentaBancaria.checked || chTarjetaCredito.checked) {
         if ((chTarjetaCredito.checked && txtNumTarjeta.value
             !== "" && txtCodSeguridadTarjeta.value !== "" && txtVencimientoTarjeta.value !== "") ||
@@ -418,5 +464,37 @@ function validateCheckbox() {
     btnMPago.style.color = `red`;
     btnMPago.setCustomValidity("Debe ingresar el Metodo de Pago");
 }
+/*
+lo dejo pero no me funciona 
+btnModal.addEventListener("click", ()=>{
+    let modal = document.getElementById("exampleModal");
+
+    if((!cuentaBancaria.checked || chTarjetaCredito.checked) && 
+    (cuentaBancaria.checked || !chTarjetaCredito.checked)){
+    
+        modal.style.opacity = "1";
+           modal.style.display = "block";
+        alert("Debe seleccionar un metodo de pago")
+    }else{
+         modal.style.opacity = "0";
+           modal.style.display = "none";}
+})
 
 
+btnModal.addEventListener("click", ()=>{
+    let modal = document.getElementById("exampleModal");
+
+    if((!cuentaBancaria.checked || chTarjetaCredito.checked) && 
+    (cuentaBancaria.checked || !chTarjetaCredito.checked)){
+    
+        modal.style.opacity = "1";
+           modal.style.display = "block";
+        alert("Debe seleccionar un metodo de pago")
+    }else{
+         modal.style.opacity = "0";
+         setTimeout(() => {
+            modal.style.display = "none";
+            modal.remove();
+         }, 500);
+    }
+})*/
